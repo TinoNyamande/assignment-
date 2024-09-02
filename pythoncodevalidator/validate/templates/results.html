@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+</head>
+<body>
+    <h1>Analysis Results</h1>
+
+    {% if errors %}
+        <h2>{{ errors|length }} Errors found</h2>
+        <ul>
+            {% for error in errors %}
+                <li>Line {{ error.lineNumber }}: {{ error.message }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No  errors found.</p>
+    {% endif %}
+</body>
+</html>
